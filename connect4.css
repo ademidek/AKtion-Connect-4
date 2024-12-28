@@ -1,12 +1,28 @@
+body{
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
 #board{
+    margin-top: 50px !important;
     height: 600px;
     width: 700px;
     background-color: skyblue;
     border: 10px solid black;
     margin: 0 auto;
-
+    display: flex;
+    flex-wrap: wrap;
 }
 
 h1{
     text-align: center;
+}
+
+.tile{
+    height: 80px;
+    width: 80px;
+    margin: 5px;
+    background-color: white;
+    border: black 5px solid;
+    border-radius: 50%;
 }
