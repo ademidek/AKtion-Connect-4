@@ -5,6 +5,7 @@ var gameOver = false;
 var board;
 var rows = 6;
 var columns = 7;
+var currentColumn;
 
 window.onload =  function() {
     setGame();
@@ -12,6 +13,7 @@ window.onload =  function() {
 
 function setGame(){
     board = [];
+    currentColumn = [5,5,5,5,5,5,5];
     for(let r = 0; r < rows; r++){
         let row = [];
         for(let c = 0; c < columns; c++){
@@ -36,8 +38,14 @@ function setPiece(){
     let position = this.id.split("-");
     let row = parseInt(position[0]);
     let column = parseInt(position[1]);
+    
+    row = currentColumn[column];
+    if (row < 0){
+        return;
+    }
+
     board[row][column] = currentPlayer;
-    let tile = this;
+    let tile = document.getElementById(row.toString() + "-" + column.toString());
     if(currentPlayer == redPlayer){
         tile.classList.add("redchip");
         currentPlayer = yellowPlayer;
@@ -45,4 +53,7 @@ function setPiece(){
         tile.classList.add("yellowchip");
         currentPlayer = redPlayer;
     }
+
+    row = row - 1;
+    currentColumn[column] = row;
 }
