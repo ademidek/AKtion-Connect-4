@@ -12,6 +12,7 @@ window.onload =  function() {
 }
 
 function setGame(){
+    boardData = document.getElementById("board");
     board = [];
     currentColumn = [5,5,5,5,5,5,5];
     for(let r = 0; r < rows; r++){
@@ -121,3 +122,25 @@ function setWinner(r,c){
     }
     gameOver = true;
 }
+
+/*function resetGame(){    
+    for(let r = 0; r < rows; r++){
+    let row = [];
+        for(let c = 0; c < columns; c++){
+            row.push(" "); 
+
+            // Create a new div for each tile
+            let tile = document.createElement("div");
+            tile.id = r.toString() + "-" + c.toString(); // Assign a unique ID to each tile
+            tile.classList.add("tile");
+            tile.addEventListener("click", setPiece);
+            document.getElementById("board").append(tile);
+        }
+    board.push(row);
+}
+    gameOver = false;
+    currentPlayer = redPlayer;
+    document.getElementById("winner").innerText = "";
+}
+
+document.getElementById("reset").addEventListener("click", resetGame); */
