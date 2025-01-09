@@ -29,8 +29,12 @@ h1{
 
 .redchip{
     background-color: red;
+    border: 5px solid darkred;
+    border-radius: 50%;
 }
 
 .yellowchip{
     background-color: yellow;
+    border: 5px solid darkgoldenrod;
+    border-radius: 50%;
 }
