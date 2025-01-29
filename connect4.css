@@ -36,11 +36,13 @@ h1{
 
 .gametitle span:nth-child(odd) {
     color: red;
-  }
+    -webkit-text-stroke: 3px yellow;
+}
   
 .gametitle span:nth-child(even) {
     color: yellow;
-  }
+    -webkit-text-stroke: 3px red;
+}
 
 .tile{
     height: 80px;
